@@ -114,6 +114,10 @@ module Spaceship
       end
 
       def post(url_or_path, body, tries: 5)
+        puts '🍔 - post'
+        puts "url_or_path #{url_or_path}"
+        puts "body:\n#{body.to_json}"
+
         response = with_asc_retry(tries) do
           request(:post) do |req|
             req.url(url_or_path)
@@ -189,6 +193,9 @@ module Spaceship
       end
 
       def handle_response(response)
+        puts '🍔 - handle_response'
+        puts response.to_json
+
         if (200...300).cover?(response.status) && (response.body.nil? || response.body.empty?)
           return
         end

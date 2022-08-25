@@ -61,6 +61,13 @@ module Match
       require 'sigh/manager'
       require 'sigh/options'
 
+      puts '🍔 - generate_provisioning_profile'
+      puts "params: #{params}"
+      puts "prov_type: #{prov_type}"
+      puts "certificate_id: #{certificate_id}"
+      puts "app_identifier: #{app_identifier}"
+      puts '🍔'
+
       prov_type = Match.profile_type_sym(params[:type])
 
       names = ["match", profile_type_name(prov_type), app_identifier]

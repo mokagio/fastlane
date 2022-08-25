@@ -162,6 +162,11 @@ module Sigh
 
     # Create a new profile and return it
     def create_profile!
+
+      puts '🍔 - create_profile!'
+      puts Sigh.config
+      puts '🍔'
+
       app_identifier = Sigh.config[:app_identifier]
       name = Sigh.config[:provisioning_name] || [app_identifier, profile_type_pretty_type].join(' ')
 
